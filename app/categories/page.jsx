@@ -1,6 +1,8 @@
 import { getAllCategories } from "@/lib/firebase/category/read_server"
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Page() {
     const categories = await getAllCategories();
 

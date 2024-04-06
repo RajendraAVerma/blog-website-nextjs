@@ -3,6 +3,8 @@ import { getCategory } from "@/lib/firebase/category/read_server";
 import { getAllPosts } from "@/lib/firebase/post/read_server"
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default async function PostListView() {
     const posts = await getAllPosts();
     if (!posts) {
