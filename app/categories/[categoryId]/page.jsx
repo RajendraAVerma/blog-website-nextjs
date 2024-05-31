@@ -3,7 +3,8 @@ import { getCategory } from "@/lib/firebase/category/read_server";
 import { getAllPostsWithCategory } from "@/lib/firebase/post/read_server";
 
 export default async function Page({ params }) {
-    const { categoryId } = params;
+    const { categoryId: categoryIdEncoded } = params;
+    const categoryId = decodeURI(categoryIdEncoded);
     const posts = await getAllPostsWithCategory(categoryId)
     return <main className="p-10">
         <div className="flex p-5 gap-3">
